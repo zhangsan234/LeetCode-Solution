@@ -44,7 +44,7 @@ import java.util.Arrays;
 class Solution {
     public int videoStitching(int[][] clips, int T) {
         int dp[] = new int[T + 1];
-        Arrays.fill(dp , Integer.MAX_VALUE);
+        Arrays.fill(dp , Integer.MAX_VALUE - 1);
         dp[0] = 0;
         for(int i = 0 ; i <= T ; i ++){
             for(int[] clip : clips){
@@ -53,6 +53,6 @@ class Solution {
                 }
             }
         }
-        return dp[T] == Integer.MAX_VALUE ? -1 : dp[T];
+        return dp[T] == Integer.MAX_VALUE - 1? -1 : dp[T];
     }
 }
